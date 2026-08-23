@@ -29,3 +29,19 @@ To simulate real-world cloud operations, I verified that the server could be man
 - **Network Validation:** Executed live network diagnostics (`ping -c 3 google.com`) directly through the remote terminal shell, confirming 100% packet transmission success and 0% packet loss.
 - **System Monitoring:** Utilized Linux process management tools (`top`) to monitor live CPU and memory telemetry metrics remotely.
 - **Graceful Shutdown:** Implemented standard infrastructure operations by executing elevated administrative commands (`sudo poweroff`) to terminate the virtual environment cleanly without data corruption.
+
+## 🌐 Level 1 Achieved: Manual Web Infrastructure Deployment
+
+I have successfully advanced this environment from a basic text container into a functional, live-hosting web server architecture. This phase establishes the critical manual foundation required before implementing cloud automation.
+
+### 🛠️ Execution & Configuration Tasks
+- **Network Layer Routing:** Configured a secondary network port forwarding rule through the VirtualBox NAT hypervisor. Mapped local host traffic from `127.0.0.1:8080` to point directly to guest destination network port `80` (the global standard for unencrypted HTTP web traffic).
+- **Web Engine Deployment:** Logged into the headless server via remote shell and utilized the advanced packaging tool to securely install the enterprise-grade **Nginx Web Server** platform (`sudo apt install nginx -y`).
+- **File System Operations:** Navigated the core Linux system directories (`/var/www/html`) to access root-level application deployment directories. 
+- **Production Code Implementation:** Used the Linux command-line text engine (`nano`) under elevated root administrator privileges (`sudo`) to wipe default server text templates and implement clean, customized HTML web architecture files (`index.html`).
+
+### 🔍 Verification & System Metrics
+- **Host-to-Guest Validation:** Confirmed full connectivity by executing cross-platform network requests via a local host browser (**Google Chrome**). 
+- **Deployment Status:** Verified that the custom-coded server interface rendering successfully, verifying an active end-to-end network tunnel between the independent Linux node and the main Windows 11 host operating system.
+
+**Next Phase Target:** Level 2 — Shifting from manual setups to *Infrastructure as Code (IaC)* by creating executable automation scripts to handle this entire sequence in under 3 seconds.
