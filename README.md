@@ -20,3 +20,12 @@ To allow my Windows 11 host machine to securely talk to the guest Linux operatin
 - Updating and patching enterprise software dependencies using the advanced packaging tool (`apt update && apt upgrade`).
 
 Next, I will be using this server environment to practice Python scripting and network automation.
+
+## 🚀 Remote Management & Verification (SSH Validation)
+To simulate real-world cloud operations, I verified that the server could be managed completely "headless" (without a graphical user interface) from my host machine's native terminal. 
+
+- **Execution:** Initiated a secure remote session via Windows Command Prompt using the Secure Shell protocol: `ssh developer@127.0.0.1 -p 2222`.
+- **Security Handshake:** Successfully completed the ECDSA/ED25519 cryptographic key fingerprint verification to establish a trusted link between host and guest.
+- **Network Validation:** Executed live network diagnostics (`ping -c 3 google.com`) directly through the remote terminal shell, confirming 100% packet transmission success and 0% packet loss.
+- **System Monitoring:** Utilized Linux process management tools (`top`) to monitor live CPU and memory telemetry metrics remotely.
+- **Graceful Shutdown:** Implemented standard infrastructure operations by executing elevated administrative commands (`sudo poweroff`) to terminate the virtual environment cleanly without data corruption.
