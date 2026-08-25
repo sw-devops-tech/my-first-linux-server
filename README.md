@@ -45,3 +45,49 @@ I have successfully advanced this environment from a basic text container into a
 - **Deployment Status:** Verified that the custom-coded server interface rendering successfully, verifying an active end-to-end network tunnel between the independent Linux node and the main Windows 11 host operating system.
 
 **Next Phase Target:** Level 2 — Shifting from manual setups to *Infrastructure as Code (IaC)* by creating executable automation scripts to handle this entire sequence in under 3 seconds.
+
+# Local Infrastructure as Code (IaC) Automation with Terraform & Docker
+
+An automated DevOps project that uses HashiCorp Terraform to provision, deploy, and manage a Linux-based Nginx web server inside a local Docker environment on Windows 11.
+
+## 🚀 Overview
+
+This project demonstrates the core principles of **Infrastructure as Code (IaC)** by replacing manual environment configuration with a repeatable, automated deployment pipeline. Instead of clicking through a graphical user interface (GUI) or manually running terminal setup steps, the entire infrastructure lifecycle is managed through declarative configuration files.
+
+## 🛠️ Tech Stack & Tools
+
+*   **IaC Tool:** HashiCorp Terraform (v1.5+)
+*   **Container Platform:** Docker Desktop for Windows 11
+*   **Virtualization:** Windows Hyper-V / Virtual Machine Platform
+*   **Web Server Engine:** Nginx (Linux-based Docker image)
+
+## 📁 Project Architecture & Files
+
+*   `main.tf`: The core declarative script that defines the infrastructure provider (Docker), downloads the base Linux web server image, and spins up the live container.
+*   `terraform.tfstate`: The state management file used by Terraform to track the real-world resources against our configuration code.
+
+## ⚙️ How It Works (Step-by-Step)
+
+### 1. Declaring the Infrastructure
+The system configuration is defined inside `main.tf`. It explicitly asks for the `kreuzwerker/docker` provider, pulls down the latest lightweight Nginx server image, and maps internal container traffic (Port 80) directly to the local machine host network (Port 8080).
+
+### 2. Initializing & Upgrading Providers
+```cmd
+terraform init -upgrade
+```
+This command analyzes the script, initializes the workspace backend, and safely downloads the specific provider plugins required to talk to the local Docker engine.
+
+### 3. Executing the Deployment Blueprint
+```cmd
+terraform apply
+```
+Terraform compares the current live state of the computer against the code instructions, builds an execution path graph, and deploys the infrastructure. Once approved, the Linux server spins up seamlessly under 5 seconds.
+
+## 📊 Core Business & DevOps Outcomes
+
+*   **Zero Manual Configuration:** Eradicated human configuration errors by defining the server architecture purely through version-controlled text files.
+*   **Immediate Environmental Recovery:** If the container freezes or crashes, running `terraform destroy` followed by `terraform apply` builds a pristine, functional server automatically in seconds.
+*   **Resource Efficiency:** Leveraging localized virtualization tools allows for complete infrastructure prototyping without incurring cloud subscription billing or platform costs.
+
+---
+*This project was built as part of my practical portfolio alongside my Open University Q62 (Computing & IT) degree.*
