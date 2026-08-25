@@ -1,0 +1,24 @@
+name: Test and Lint Terraform Code
+
+on:
+  push:
+    branches: [ main, master ]
+
+jobs:
+  validate-infrastructure:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v4
+
+    - name: Setup Terraform
+      uses: hashicorp/setup-terraform@v3
+
+    - name: Check Code Formatting
+      run: terraform fmt -check
+
+    - name: Validate Configuration
+      run: |
+        terraform init -backend=false
+        terraform validate
